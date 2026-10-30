@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход в личный кабинет</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- класс card-XXXXX генерируется скриптом при каждой загрузке (нестабильный селектор) -->
+    <div class="card" id="card">
+      <img class="logo" src="logo.svg" alt="Логотип стенда">
+
+      <!-- Форма входа -->
+      <form id="login-form" name="login" novalidate>
+        <h1>Вход в личный кабинет</h1>
+
+        <div id="error-message" class="alert" role="alert" hidden></div>
+
+        <label for="username">Имя пользователя</label>
+        <input type="text" id="username" name="username" placeholder="student" autocomplete="off">
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="off">
+
+        <label class="remember">
+          <input type="checkbox" name="remember"> Запомнить меня
+        </label>
+
+        <button type="submit" class="btn btn-primary" data-testid="login-submit">Войти</button>
+        <a class="link-secondary" href="#">Забыли пароль?</a>
+      </form>
+
+      <!-- Личный кабинет (виден после успешного входа) -->
+      <section id="dashboard" hidden>
+        <h1>Личный кабинет</h1>
+        <p id="welcome">Добро пожаловать, <strong id="welcome-name"></strong>!</p>
+        <button type="button" id="logout-btn" class="btn btn-secondary">Logout</button>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

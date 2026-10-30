@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Обратная связь</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>Обратная связь</h1>
+
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Имя *</label>
+          <input type="text" id="name" name="name" autocomplete="off">
+          <span class="error" id="error-name" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="text" id="email" name="email" autocomplete="off">
+          <span class="error" id="error-email" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input type="text" id="phone" name="phone" placeholder="+7 900 123-45-67" autocomplete="off">
+          <span class="error" id="error-phone" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="subject">Тема *</label>
+          <select id="subject" name="subject">
+            <option value="">Выберите тему</option>
+            <option value="question">Вопрос</option>
+            <option value="feedback">Отзыв</option>
+            <option value="issue">Проблема</option>
+          </select>
+          <span class="error" id="error-subject" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="message">Сообщение *</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+          <span class="error" id="error-message" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label class="consent">
+            <input type="checkbox" id="consent" name="consent"> Я согласен на обработку персональных данных *
+          </label>
+          <span class="error" id="error-consent" role="alert"></span>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn">Отправить</button>
+      </form>
+
+      <div id="success-message" class="success" role="status" hidden>Спасибо! Ваше сообщение отправлено.</div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
